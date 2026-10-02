@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta 
+        name="description" 
+        content="Interactive Quiz App dengan sistem skor otomatis dan high score menggunakan LocalStorage."
+    >
+
+    <title>Interactive Quiz App</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="header-content">
+            <h1>🧠 Interactive Quiz</h1>
+
+            <button 
+                id="theme-toggle" 
+                class="theme-button"
+                type="button"
+                aria-label="Ubah tema"
+            >
+                🌙
+            </button>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- HOME PAGE -->
+        <section id="home-page" class="page active">
+
+            <div class="hero">
+
+                <span class="badge">QUIZ APP</span>
+
+                <h2>Test Your Knowledge!</h2>
+
+                <p>
+                    Jawab semua pertanyaan dan dapatkan skor terbaikmu.
+                </p>
+
+                <div class="home-info">
+
+                    <div class="info-card">
+                        <span>📝</span>
+                        <strong id="question-count">5</strong>
+                        <small>Questions</small>
+                    </div>
+
+                    <div class="info-card">
+                        <span>🏆</span>
+                        <strong id="home-high-score">0</strong>
+                        <small>High Score</small>
+                    </div>
+
+                </div>
+
+                <button 
+                    id="start-button" 
+                    class="primary-button"
+                    type="button"
+                >
+                    Mulai Quiz
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- QUIZ PAGE -->
+        <section id="quiz-page" class="page">
+
+            <div class="quiz-container">
+
+                <div class="quiz-top">
+
+                    <div>
+                        <span id="category" class="category">
+                            General
+                        </span>
+
+                        <p id="question-number">
+                            Pertanyaan 1 dari 5
+                        </p>
+                    </div>
+
+                    <div class="score-box">
+                        🏆 <span id="current-score">0</span>
+                    </div>
+
+                </div>
+
+
+                <!-- Progress -->
+                <div class="progress-container">
+
+                    <div class="progress-info">
+                        <span>Progress</span>
+                        <span id="progress-text">1 / 5</span>
+                    </div>
+
+                    <div class="progress-bar">
+                        <div 
+                            id="progress-fill" 
+                            class="progress-fill"
+                        ></div>
+                    </div>
+
+                </div>
+
+
+                <!-- Timer -->
+                <div class="timer-container">
+
+                    <span>⏱️ Waktu</span>
+
+                    <strong id="timer">
+                        15
+                    </strong>
+
+                </div>
+
+
+                <!-- Question -->
+                <div class="question-card">
+
+                    <h2 id="question">
+                        Loading question...
+                    </h2>
+
+                    <div 
+                        id="answers" 
+                        class="answers"
+                    ></div>
+
+                </div>
+
+
+                <!-- Next -->
+                <button 
+                    id="next-button"
+                    class="primary-button next-button"
+                    type="button"
+                    disabled
+                >
+                    Jawaban Berikutnya →
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- RESULT PAGE -->
+        <section id="result-page" class="page">
+
+            <div class="result-container">
+
+                <div class="result-icon">
+                    🏆
+                </div>
+
+                <span class="badge">
+                    QUIZ SELESAI
+                </span>
+
+                <h2>Hasil Quiz</h2>
+
+                <p class="result-message" id="result-message">
+                    Good job!
+                </p>
+
+                <div class="result-score">
+
+                    <span>Skor Kamu</span>
+
+                    <strong id="final-score">
+                        0
+                    </strong>
+
+                    <small>
+                        / 100
+                    </small>
+
+                </div>
+
+
+                <div class="result-details">
+
+                    <div>
+                        <span>Benar</span>
+                        <strong id="correct-answer">
+                            0
+                        </strong>
+                    </div>
+
+                    <div>
+                        <span>Salah</span>
+                        <strong id="wrong-answer">
+                            0
+                        </strong>
+                    </div>
+
+                    <div>
+                        <span>High Score</span>
+                        <strong id="final-high-score">
+                            0
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <button 
+                    id="restart-button"
+                    class="primary-button"
+                    type="button"
+                >
+                    🔄 Main Lagi
+                </button>
+
+                <button 
+                    id="home-button"
+                    class="secondary-button"
+                    type="button"
+                >
+                    ← Kembali ke Home
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>
+            © 2026 Interactive Quiz App
+        </p>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
